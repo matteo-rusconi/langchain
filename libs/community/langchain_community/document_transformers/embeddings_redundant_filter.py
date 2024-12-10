@@ -168,7 +168,7 @@ class EmbeddingsRedundantFilter(BaseDocumentTransformer, BaseModel):
         included_idxs = _filter_similar_embeddings(
             embedded_documents, self.similarity_fn, self.similarity_threshold
         )
-        return [stateful_documents[i] for i in sorted(included_idxs)]
+        return [documents[i] for i in sorted(included_idxs)]
 
 
 class EmbeddingsClusteringFilter(BaseDocumentTransformer, BaseModel):
